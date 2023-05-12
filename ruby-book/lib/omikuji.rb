@@ -41,13 +41,85 @@ puts "おみくじを引いてください"
 
 
 # 引数numberを使用して10回おみくじを生成する方法
-def omikuji(number)
+# def omikuji(number)
   
-  if number == 1
+#   if number == 1
+#     puts "大吉です"
+#   elsif number == 2
+#     puts "中吉です"
+#   elsif number == 10
+#     puts "凶です"
+#   else
+#     puts "小吉です"
+#   end
+  
+# end
+
+# 10.times do
+#   selected_random_number = rand(1..10)
+#   omikuji(selected_random_number)
+# end
+
+
+# 引数numberを使用して1からnumberまでの範囲でランダムな値を生成して
+# omikujiの戻り値をreturnに代入する
+# おみくじを10回繰り返す
+# def omikuji(number)
+#   selected_random_number = rand(1..number)
+  
+#   if selected_random_number == 1
+#     puts "大吉です"
+#   elsif selected_random_number == 2
+#     puts "中吉です"
+#   elsif selected_random_number == 10
+#     puts "凶です"
+#   else
+#     puts "小吉です"
+#   end
+  
+# end
+
+# 10.times do
+#   result = omikuji(50)
+#   puts result
+# end
+  
+
+# 大吉が出たらおみくじを終了する
+# def omikuji(number)
+#   selected_random_number = rand(1..number)
+  
+#   if selected_random_number == 1
+#     puts "大吉です"
+#   elsif selected_random_number == 2
+#     puts "中吉です"
+#   elsif selected_random_number == 10
+#     puts "凶です"
+#   else
+#     puts "小吉です"
+#   end
+  
+# end
+
+# result = 0
+
+# # 無限ループになっているので注意！！
+# while result != 1 do
+#   result = omikuji(20)
+#   puts result
+# end
+
+
+
+# 大吉が出たらおみくじを終了する
+def omikuji(number)
+  selected_random_number = rand(1..number)
+  
+  if selected_random_number == 1
     puts "大吉です"
-  elsif number == 2
+  elsif selected_random_number == 2
     puts "中吉です"
-  elsif number == 10
+  elsif selected_random_number == 10
     puts "凶です"
   else
     puts "小吉です"
@@ -55,7 +127,39 @@ def omikuji(number)
   
 end
 
-10.times do
-  selected_random_number = rand(1..10)
-  omikuji(selected_random_number)
+result = ""
+
+# 無限ループになっているので注意！！
+while result != "大吉です" do
+  result = omikuji(20)
+  puts result
 end
+
+
+
+# 大吉が出たらおみくじを終了する
+# これだとうまくいくけど
+# result = selected_random_numberと代入するのに違和感がある
+
+# def omikuji(number)
+#   selected_random_number = rand(1..number)
+  
+#   if selected_random_number == 1
+#     puts "大吉です"
+#   elsif selected_random_number == 2
+#     puts "中吉です"
+#   elsif selected_random_number == 10
+#     puts "凶です"
+#   else
+#     puts "小吉です"
+#   end
+  
+#   result = selected_random_number
+# end
+
+# result = 0
+
+# while result != 1 do
+#   result = omikuji(20)
+#   puts result
+# end
