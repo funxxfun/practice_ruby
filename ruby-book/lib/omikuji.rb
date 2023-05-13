@@ -193,30 +193,93 @@ puts "おみくじを引いてください"
 
 
 #大吉が2回出たらおみくじを終了する
+# def omikuji(number)
+#     selected_random_number = rand(1..number)
+    
+#     if selected_random_number == 1
+#       puts "大吉です"
+#     elsif selected_random_number == 2
+#       puts "中吉です"
+#     elsif selected_random_number == 10
+#       puts "凶です"
+#     else
+#       puts "小吉です"
+#     end
+  
+#     return selected_random_number  # 結果を戻り値として返す
+    
+#   end
+  
+#   daikichi_counter = 0
+
+#   while daikichi_counter <= 1 do
+#     result = omikuji(20)
+#     if result == 1
+#      daikichi_counter += 1
+#     end
+#   end
+
+
+# ランダムな数字を2回引いて、
+#先に引いた数字の方が大きい場合は吉、
+#小さい場合は凶、
+#同じ場合は大吉と表示する
+
+# def omikuji(number)
+#   first_selected_random_number = rand(1..number)
+#   second_selected_random_number = rand(1..number)
+
+#   # putsを使わずに記述
+#   # 最終結果が戻り値となる
+#   if first_selected_random_number > second_selected_random_number
+#     "吉です"
+#   elsif first_selected_random_number == second_selected_random_number
+#     "大吉です"
+#   else
+#     "凶です"
+#   end
+# end
+
+# # 戻り値をreturnに代入
+# result = omikuji(20)
+# #resultを表示する
+# puts result
+
+
+
+# ランダムな数字を2回引いて、１番目に引いた数字の方が大きい場合は大吉と表示する。
+# それ以外の場合は再度おみくじを引いて、１番目にひいいた数字と比較して
+# 1番目に引いた数字の方が大きい場合は中吉、
+# 小さい場合は凶、
+# それ以外の時は小吉と表示する
+
 def omikuji(number)
-    selected_random_number = rand(1..number)
+  first_selected_random_number = rand(1..number)
+  second_selected_random_number = rand(1..number)
+
+  # putsを使わずに記述
+  # 最終結果が戻り値となる
+  if first_selected_random_number > second_selected_random_number
+    "大吉です"
+  else
+    third_selected_random_number = rand(1..number)
     
-    if selected_random_number == 1
-      puts "大吉です"
-    elsif selected_random_number == 2
-      puts "中吉です"
-    elsif selected_random_number == 10
-      puts "凶です"
+    if first_selected_random_number > third_selected_random_number
+      "中吉です"
+    elsif
+      first_selected_random_number < third_selected_random_number
+      "凶です"
     else
-      puts "小吉です"
-    end
-  
-    return selected_random_number  # 結果を戻り値として返す
-    
-  end
-  
-  daikichi_counter = 0
-
-  while daikichi_counter <= 1 do
-    result = omikuji(20)
-    if result == 1
-     daikichi_counter += 1
+      "小吉です"
     end
   end
 
- 
+  # puts first_selected_random_number
+  # puts second_selected_random_number
+  # puts third_selected_random_number
+end
+
+# 戻り値をreturnに代入
+result = omikuji(20)
+# resultを表示する
+puts result
