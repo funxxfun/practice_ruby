@@ -86,6 +86,33 @@ puts "おみくじを引いてください"
   
 
 # 大吉が出たらおみくじを終了する
+def omikuji(number)
+  selected_random_number = rand(1..number)
+  
+  if selected_random_number == 1
+    puts "大吉です"
+  elsif selected_random_number == 2
+    puts "中吉です"
+  elsif selected_random_number == 10
+    puts "凶です"
+  else
+    puts "小吉です"
+  end
+
+  return selected_random_number  # 結果を戻り値として返す
+  
+end
+
+result = 0
+
+while result != 1 do
+  result = omikuji(20)
+  puts result
+end
+
+
+
+# 大吉が出たらおみくじを終了する
 # def omikuji(number)
 #   selected_random_number = rand(1..number)
   
@@ -101,39 +128,13 @@ puts "おみくじを引いてください"
   
 # end
 
-# result = 0
+# result = ""
 
 # # 無限ループになっているので注意！！
-# while result != 1 do
+# while result != "大吉です" do
 #   result = omikuji(20)
 #   puts result
 # end
-
-
-
-# 大吉が出たらおみくじを終了する
-def omikuji(number)
-  selected_random_number = rand(1..number)
-  
-  if selected_random_number == 1
-    puts "大吉です"
-  elsif selected_random_number == 2
-    puts "中吉です"
-  elsif selected_random_number == 10
-    puts "凶です"
-  else
-    puts "小吉です"
-  end
-  
-end
-
-result = ""
-
-# 無限ループになっているので注意！！
-while result != "大吉です" do
-  result = omikuji(20)
-  puts result
-end
 
 
 
