@@ -42,7 +42,8 @@ def janken
     (my_hand == pa) && (opponent_hand == gu)
     puts "あなたの勝ちです"
   elsif my_hand == opponent_hand
-    puts "あいこです"
+    puts "あいこでしょ"
+    janken
   else
     puts "あなたの負けです"
   end
