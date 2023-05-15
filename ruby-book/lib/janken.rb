@@ -1,7 +1,7 @@
 puts "じゃんけんぽん"
-puts "手を選んでください"
 
 def janken
+  puts "「手を選んでください」"
   # 0: グー、1: チョキ、2: パーを定義する
   
   gu = "グー"
@@ -43,7 +43,8 @@ def janken
     (my_hand == gu) && (opponent_hand == choki) ||
     (my_hand == choki) && (opponent_hand == pa) ||
     (my_hand == pa) && (opponent_hand == gu)
-    puts "あなたの勝ちです"
+    puts "あなたの勝ちです。"
+    return true
   elsif my_hand == opponent_hand
     puts "あいこでしょ"
     janken
@@ -55,3 +56,16 @@ end
 
 
 janken
+
+
+# 3回勝ったら終了する
+
+winning_times = 0
+
+while winning_times < 3 do
+  if janken
+    winning_times += 1
+  end
+end
+
+puts "#{winning_times}回勝ったので、じゃんけん終了です"
