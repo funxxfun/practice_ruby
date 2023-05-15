@@ -40,7 +40,7 @@ def janken
   puts "相手が出したのは#{opponent_hand}です。"
 
   if
-    (my_hand == gu ) && (opponent_hand == choki) ||
+    (my_hand == gu) && (opponent_hand == choki) ||
     (my_hand == choki) && (opponent_hand == pa) ||
     (my_hand == pa) && (opponent_hand == gu)
     puts "あなたの勝ちです"
@@ -54,4 +54,4 @@ def janken
 end
 
 
-puts janken
+janken
