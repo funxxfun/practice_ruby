@@ -39,15 +39,15 @@ def janken
   
   puts "相手が出したのは#{opponent_hand}です。"
 
-  if
+  if my_hand == opponent_hand
+    puts "あいこでしょ"
+    janken
+  elsif
     (my_hand == gu) && (opponent_hand == choki) ||
     (my_hand == choki) && (opponent_hand == pa) ||
     (my_hand == pa) && (opponent_hand == gu)
     puts "あなたの勝ちです。"
     return true
-  elsif my_hand == opponent_hand
-    puts "あいこでしょ"
-    janken
   else
     puts "あなたの負けです"
   end
