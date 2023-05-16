@@ -1,6 +1,6 @@
 puts "じゃんけんぽん"
 
-def attimuitehoi
+def attimuite_hoi
   puts "あっちむいて、ほい"
 
   up    = "上"
@@ -8,14 +8,22 @@ def attimuitehoi
   right = "右"
   left  = "左"
 
-  hoi_direction = ["#{up}", "#{down}", "#{right}", "#{left}"]
+  selected_direction = ["#{up}", "#{down}", "#{right}", "#{left}"]
   puts "0:#{up}、1:#{down}、2:#{right}、3:#{left}"
 
-  my_direction = hoi_direction[gets.to_i]
-  puts my_direction
+  my_direction = selected_direction[gets.to_i]
+  puts "あなたが選んだ方向は#{my_direction}です。"
 
-  opponent_direction = hoi_direction[rand(3)]
-  puts opponent_direction
+  opponent_direction = selected_direction[rand(3)]
+  puts "相手が選んだ方向は#{opponent_direction}です。"
+
+  if my_direction == opponent_direction
+    puts "同じ方向が選択されました。"
+  else
+    puts "もう一度じゃんけんをしてください。"
+    janken
+  end
+
 end
 
 
@@ -45,12 +53,15 @@ def janken
     (my_hand == choki) && (opponent_hand == pa) ||
     (my_hand == pa) && (opponent_hand == gu)
     puts "じゃんけんに勝ちました。"
-    attimuitehoi
+    puts "指をさす方向を選んでください。"
+    attimuite_hoi
   elsif my_hand == opponent_hand
     puts "あいこでしょ"
     janken
   else
-    puts "あなたの負けです"
+    puts "じゃんけんに負けました。"
+    puts "顔を向ける方向を選んでください。"
+    attimuite_hoi
   end
 
 end
