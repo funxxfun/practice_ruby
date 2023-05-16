@@ -1,4 +1,4 @@
-def attimuite_hoi
+def attimuite_hoi(winner)
   puts "あっちむいて、ほい"
   
   up    = "上"
@@ -17,6 +17,13 @@ def attimuite_hoi
   
   if my_direction == opponent_direction
     puts "同じ方向が選択されました。"
+
+    if winner
+      puts "あなたの勝ちです"
+    else
+      puts "あなたの負けです"
+    end
+
   else
     puts "もう一度じゃんけんをします。"
     puts "じゃんけんぽん"
@@ -57,12 +64,12 @@ def janken
     puts "じゃんけんに勝ちました。"
     
     puts "指をさす方向を選んでください。"
-    attimuite_hoi
+    attimuite_hoi(true)
   else
     puts "じゃんけんに負けました。"
 
     puts "顔を向ける方向を選んでください。"
-    attimuite_hoi
+    attimuite_hoi(false)
   end
 
 end
