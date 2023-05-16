@@ -21,6 +21,7 @@ def attimuite_hoi
     puts "同じ方向が選択されました。"
   else
     puts "もう一度じゃんけんをしてください。"
+    puts "じゃんけんぽん"
     janken
   end
 
@@ -48,16 +49,16 @@ def janken
   opponent_hand = gu_choki_pa[rand(2)]
   puts "相手が出したのは#{opponent_hand}です。"
 
-  if
+  if my_hand == opponent_hand
+    puts "あいこでしょ"
+    janken
+  elsif
     (my_hand == gu) && (opponent_hand == choki) ||
     (my_hand == choki) && (opponent_hand == pa) ||
     (my_hand == pa) && (opponent_hand == gu)
     puts "じゃんけんに勝ちました。"
     puts "指をさす方向を選んでください。"
     attimuite_hoi
-  elsif my_hand == opponent_hand
-    puts "あいこでしょ"
-    janken
   else
     puts "じゃんけんに負けました。"
     puts "顔を向ける方向を選んでください。"
