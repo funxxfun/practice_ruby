@@ -4,9 +4,9 @@ def fizz_buzz(n)
   elsif n % 3 == 0
     'Fizz'
   elsif n % 5 == 0
-  'Buzz'
+    'Buzz'
   else
-  n.to_s
+    n.to_s
   end
 end
 
